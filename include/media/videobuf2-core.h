@@ -17,6 +17,8 @@
 #include <linux/poll.h>
 #include <linux/videodev2.h>
 
+#define VB2_MAX_FRAME  64
+
 struct vb2_alloc_ctx;
 struct vb2_fileio_data;
 

@@ -38,11 +38,15 @@
 #define NUM_ACTUATOR_DIR 2
 #define MAX_ACTUATOR_SCENARIO 8
 #define MAX_ACTUATOR_REGION 5
-#define MAX_ACTUATOR_INIT_SET 12
+#define MAX_ACTUATOR_INIT_SET 50 //12
 #define MAX_ACTUATOR_REG_TBL_SIZE 8
+#define MAX_ACTUATOR_AF_TOTAL_STEPS 1024
 
 #define MOVE_NEAR 0
 #define MOVE_FAR  1
+
+#define MSM_ACTUATOR_MOVE_SIGNED_FAR -1
+#define MSM_ACTUATOR_MOVE_SIGNED_NEAR  1
 
 #define MAX_EEPROM_NAME 32
 
@@ -216,6 +220,8 @@ enum msm_sensor_power_seq_gpio_t {
 	SENSOR_GPIO_EXT_VANA_POWER,
 	SENSOR_GPIO_EXT_VIO_POWER,
 	SENSOR_GPIO_EXT_CAMIO_EN,
+	SENSOR_GPIO_EXT_VAF_POWER,
+	SENSOR_GPIO_MIPI_CHANGE,
 	SENSOR_GPIO_MAX,
 };
 
@@ -475,6 +481,7 @@ enum eeprom_cfg_type_t {
 	CFG_EEPROM_ERASE,
 	CFG_EEPROM_POWER_ON,
 	CFG_EEPROM_POWER_OFF,
+	CFG_EEPROM_READ_DATA_FROM_HW,
 };
 struct eeprom_get_t {
 	uint32_t num_bytes;
@@ -657,6 +664,12 @@ struct msm_actuator_cfg_data {
 enum msm_actuator_write_type {
 	MSM_ACTUATOR_WRITE_HW_DAMP,
 	MSM_ACTUATOR_WRITE_DAC,
+	MSM_ACTUATOR_WRITE_DAC_SEQ,
+};
+
+enum msm_actuator_init_focus_type{
+  MSM_ACTUATOR_INIT_FOCUS_DELAY = 0xDD,
+  MSM_ACTUATOR_INIT_FOCUS_READ_STATUS = 0xDC,  
 };
 
 struct msm_actuator_reg_params_t {

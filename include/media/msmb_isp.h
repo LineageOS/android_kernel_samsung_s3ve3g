@@ -14,6 +14,7 @@
 #define ISP_META_CHANNEL_BIT  0x80000
 #define ISP_STATS_STREAM_BIT  0x80000000
 
+#define MSM_VFE_REG_CFG_FRAME_ID_NOT_MATCH_ERROR	0xCACFC
 enum ISP_START_PIXEL_PATTERN {
 	ISP_BAYER_RGRGRG,
 	ISP_BAYER_GRGRGR,
@@ -151,6 +152,7 @@ struct msm_vfe_axi_stream_release_cmd {
 enum msm_vfe_axi_stream_cmd {
 	STOP_STREAM,
 	START_STREAM,
+	STOP_IMMEDIATELY,
 };
 
 struct msm_vfe_axi_stream_cfg_cmd {
@@ -164,6 +166,20 @@ enum msm_vfe_axi_stream_update_type {
 	DISABLE_STREAM_BUF_DIVERT,
 	UPDATE_STREAM_FRAMEDROP_PATTERN,
 	UPDATE_STREAM_AXI_CONFIG,
+};
+
+struct msm_vfe_axi_halt_cmd {
+  uint32_t stop_camif; //Boolean whether stop camif is to be done
+  uint32_t overflow_detected;
+};
+
+struct msm_vfe_axi_reset_cmd {
+  uint32_t blocking; //Boolean whether stop camif is to be done
+  unsigned long frame_id;
+};
+
+struct msm_vfe_axi_restart_cmd {
+  uint32_t enable_camif; //Boolean whether stop camif is to be done
 };
 
 struct msm_vfe_axi_stream_cfg_update_info {
@@ -237,12 +253,15 @@ enum msm_vfe_reg_cfg_type {
 	VFE_READ_DMI_16BIT,
 	VFE_READ_DMI_32BIT,
 	VFE_READ_DMI_64BIT,
+	GET_SOC_HW_VER,
+	GET_MAX_CLK_RATE,
 };
 
 struct msm_vfe_cfg_cmd2 {
 	uint16_t num_cfg;
 	uint16_t cmd_len;
 	void __user *cfg_data;
+	uint32_t frame_id;
 	void __user *cfg_cmd;
 };
 
