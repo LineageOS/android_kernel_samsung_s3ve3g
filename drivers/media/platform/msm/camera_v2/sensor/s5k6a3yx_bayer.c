@@ -21,11 +21,7 @@
 
 #define S5K6A3YX_DEBUG
 #undef CDBG
-#ifdef S5K6A3YX_DEBUG
 #define CDBG(fmt, args...) printk("s5k6a3yx: %s:%d : "fmt,   __FUNCTION__, __LINE__, ##args)
-#else
-#define CDBG(fmt, args...) pr_debug(fmt, ##args)
-#endif
 
 DEFINE_MUTEX(s5k6a3yx_mut);
 static struct msm_sensor_ctrl_t s5k6a3yx_s_ctrl;
