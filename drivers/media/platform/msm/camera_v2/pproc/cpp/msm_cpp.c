@@ -53,15 +53,6 @@
 #define MSM_CPP_NOMINAL_CLOCK 266670000
 #define MSM_CPP_TURBO_CLOCK 320000000
 
-#define CPP_FW_VERSION_1_2_0	0x10020000
-#define CPP_FW_VERSION_1_4_0	0x10040000
-#define CPP_FW_VERSION_1_6_0	0x10060000
-#define CPP_FW_VERSION_1_8_0	0x10080000
-
-/* stripe information offsets in frame command */
-#define STRIPE_BASE_FW_1_2_0	130
-#define STRIPE_BASE_FW_1_4_0	140
-#define STRIPE_BASE_FW_1_6_0	464
 
 typedef struct _msm_cpp_timer_data_t {
 	struct cpp_device *cpp_dev;
@@ -75,9 +66,6 @@ typedef struct _msm_cpp_timer_t {
 } msm_cpp_timer_t;
 
 msm_cpp_timer_t cpp_timers;
-
-static int msm_cpp_buffer_ops(struct cpp_device *cpp_dev,
-	uint32_t buff_mgr_ops, struct msm_buf_mngr_info *buff_mgr_info);
 
 #if CONFIG_MSM_CPP_DBG
 #define CPP_DBG(fmt, args...) pr_err(fmt, ##args)
@@ -759,13 +747,6 @@ static int cpp_init_hardware(struct cpp_device *cpp_dev)
 			goto req_irq_fail;
 		}
 		cpp_dev->buf_mgr_subdev = msm_buf_mngr_get_subdev();
-		rc = msm_cpp_buffer_ops(cpp_dev,
-			VIDIOC_MSM_BUF_MNGR_INIT, NULL);
-		if (rc < 0) {
-			pr_err("buf mngr init failed\n");
-			free_irq(cpp_dev->irq->start, cpp_dev);
-			goto req_irq_fail;
-		}
 	}
 
 	cpp_dev->hw_info.cpp_hw_version =
@@ -823,12 +804,7 @@ bus_scale_register_failed:
 
 static void cpp_release_hardware(struct cpp_device *cpp_dev)
 {
-	int32_t rc;
 	if (cpp_dev->state != CPP_STATE_BOOT) {
-		rc = msm_cpp_buffer_ops(cpp_dev,
-			VIDIOC_MSM_BUF_MNGR_DEINIT, NULL);
-		if (rc < 0)
-			pr_err("error in buf mngr deinit rc=%d\n", rc);
 		free_irq(cpp_dev->irq->start, cpp_dev);
 		tasklet_kill(&cpp_dev->cpp_tasklet);
 		atomic_set(&cpp_dev->irq_cnt, 0);
@@ -839,11 +815,11 @@ static void cpp_release_hardware(struct cpp_device *cpp_dev)
 	iounmap(cpp_dev->cpp_hw_base);
 	msm_cam_clk_enable(&cpp_dev->pdev->dev, cpp_clk_info,
 		cpp_dev->cpp_clk, ARRAY_SIZE(cpp_clk_info), 0);
-
-	regulator_disable(cpp_dev->fs_cpp);
-	regulator_put(cpp_dev->fs_cpp);
-	cpp_dev->fs_cpp = NULL;
-
+	if (0) {
+		regulator_disable(cpp_dev->fs_cpp);
+		regulator_put(cpp_dev->fs_cpp);
+		cpp_dev->fs_cpp = NULL;
+	}
 	if (cpp_dev->stream_cnt > 0)
 		pr_err("error: stream count active\n");
 	cpp_dev->stream_cnt = 0;
@@ -932,8 +908,7 @@ static void cpp_load_fw(struct cpp_device *cpp_dev, char *fw_name_bin)
 	msm_cpp_poll(cpp_dev->base, MSM_CPP_MSG_ID_CMD);
 	msm_cpp_poll(cpp_dev->base, 0x2);
 	msm_cpp_poll(cpp_dev->base, MSM_CPP_MSG_ID_FW_VER);
-	cpp_dev->fw_version = msm_cpp_read(cpp_dev->base);
-	pr_info("CPP FW Version: 0x%08x\n", cpp_dev->fw_version);
+	pr_info("CPP FW Version: 0x%x\n", msm_cpp_read(cpp_dev->base));
 	msm_cpp_poll(cpp_dev->base, MSM_CPP_MSG_ID_TRAILER);
 
 	/*Disable MC clock*/
@@ -1287,8 +1262,9 @@ static int msm_cpp_cfg(struct cpp_device *cpp_dev,
 	uint16_t num_stripes = 0;
 	struct msm_buf_mngr_info buff_mgr_info, dup_buff_mgr_info;
 	int32_t status = 0;
+	uint8_t fw_version_1_2_x = 0;
 	int32_t *ret_status = 0;
-	int32_t stripe_base = 0;
+
 	int i = 0;
 	if (!new_frame) {
 		pr_err("Insufficient memory. return\n");
@@ -1322,16 +1298,6 @@ static int msm_cpp_cfg(struct cpp_device *cpp_dev,
 	}
 
 	new_frame->cpp_cmd_msg = cpp_frame_msg;
-	if (cpp_frame_msg == NULL ||
-		(new_frame->msg_len < MSM_CPP_MIN_FRAME_LENGTH)) {
-		pr_err("%s %d Length is not correct or frame message is missing\n",
-			__func__, __LINE__);
-		return -EINVAL;
-	}
-	if (cpp_frame_msg[new_frame->msg_len - 1] != MSM_CPP_MSG_ID_TRAILER) {
-		pr_err("%s %d Invalid frame message\n", __func__, __LINE__);
-		return -EINVAL;
-	}
 
 	in_phyaddr = msm_cpp_fetch_buffer_info(cpp_dev,
 		&new_frame->input_buffer_info,
@@ -1402,35 +1368,21 @@ static int msm_cpp_cfg(struct cpp_device *cpp_dev,
 		((cpp_frame_msg[12] >> 10) & 0x3FF) +
 		(cpp_frame_msg[12] & 0x3FF);
 
-	if ((cpp_dev->fw_version & 0xffff0000) ==
-		CPP_FW_VERSION_1_2_0) {
-		stripe_base = STRIPE_BASE_FW_1_2_0;
-	} else if ((cpp_dev->fw_version & 0xffff0000) ==
-		CPP_FW_VERSION_1_4_0) {
-		stripe_base = STRIPE_BASE_FW_1_4_0;
-	} else if ((cpp_dev->fw_version & 0xffff0000) ==
-		CPP_FW_VERSION_1_6_0) {
-		stripe_base = STRIPE_BASE_FW_1_6_0;
-	} else {
-		pr_err("invalid fw version %08x", cpp_dev->fw_version);
+	fw_version_1_2_x = 0;
+	if (cpp_dev->hw_info.cpp_hw_version == 0x10010000 ||
+            cpp_dev->hw_info.cpp_hw_version == 0x20000000) {
+		fw_version_1_2_x = 2;
 	}
-
-	if ((stripe_base + num_stripes*27 + 1) != new_frame->msg_len) {
-		pr_err("Invalid frame message\n");
-		rc = -EINVAL;
-		goto ERROR3;
-	}
-
 	for (i = 0; i < num_stripes; i++) {
-		cpp_frame_msg[stripe_base + 5 + i*27] +=
+		cpp_frame_msg[(133 + fw_version_1_2_x) + i * 27] +=
 			(uint32_t) in_phyaddr;
-		cpp_frame_msg[stripe_base + 11 + i * 27] +=
+		cpp_frame_msg[(139 + fw_version_1_2_x) + i * 27] +=
 			(uint32_t) out_phyaddr0;
-		cpp_frame_msg[stripe_base + 12 + i * 27] +=
+		cpp_frame_msg[(140 + fw_version_1_2_x) + i * 27] +=
 			(uint32_t) out_phyaddr1;
-		cpp_frame_msg[stripe_base + 13 + i * 27] +=
+		cpp_frame_msg[(141 + fw_version_1_2_x) + i * 27] +=
 			(uint32_t) out_phyaddr0;
-		cpp_frame_msg[stripe_base + 14 + i * 27] +=
+		cpp_frame_msg[(142 + fw_version_1_2_x) + i * 27] +=
 			(uint32_t) out_phyaddr1;
 	}
 
@@ -2082,11 +2034,6 @@ static int __devinit cpp_probe(struct platform_device *pdev)
 	cpp_dev->work =
 		(struct msm_cpp_work_t *)kmalloc(sizeof(struct msm_cpp_work_t),
 		GFP_KERNEL);
-    if(!cpp_dev->work) {
-		pr_err("no enough memory\n");
-		rc = -ENOMEM;
-		goto ERROR4;
-	}
 	INIT_WORK((struct work_struct *)cpp_dev->work, msm_cpp_do_timeout_work);
 	cpp_dev->cpp_open_cnt = 0;
 	cpp_dev->is_firmware_loaded = 0;
@@ -2094,8 +2041,7 @@ static int __devinit cpp_probe(struct platform_device *pdev)
 	atomic_set(&cpp_timers.used,0);
 	cpp_dev->fw_name_bin = NULL;
 	return rc;
-ERROR4:
-	destroy_workqueue(cpp_dev->timer_wq);
+
 ERROR3:
 	release_mem_region(cpp_dev->mem->start, resource_size(cpp_dev->mem));
 ERROR2:

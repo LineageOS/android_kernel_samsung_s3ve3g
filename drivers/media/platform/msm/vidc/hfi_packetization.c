@@ -1476,34 +1476,12 @@ int create_pkt_cmd_session_set_property(
 		pkt->size += sizeof(u32) + sizeof(struct hfi_ltrmark);
 		break;
 	}
-	case HAL_PARAM_VENC_HIER_P_MAX_ENH_LAYERS:
+	case HAL_PARAM_VENC_HIER_P_NUM_FRAMES:
 	{
 		pkt->rg_property_data[0] =
-			HFI_PROPERTY_PARAM_VENC_HIER_P_MAX_NUM_ENH_LAYER;
+			HFI_PROPERTY_PARAM_VENC_HIER_P_NUM_ENH_LAYER;
 		pkt->rg_property_data[1] = *(u32 *)pdata;
 		pkt->size += sizeof(u32) * 2;
-		break;
-	}
-	case HAL_CONFIG_VENC_HIER_P_NUM_FRAMES:
-	{
-		pkt->rg_property_data[0] =
-			HFI_PROPERTY_CONFIG_VENC_HIER_P_ENH_LAYER;
-		pkt->rg_property_data[1] = *(u32 *)pdata;
-		pkt->size += sizeof(u32) * 2;
-		break;
-	}
-	case HAL_PARAM_VENC_ENABLE_INITIAL_QP:
-	{
-		struct hfi_initial_quantization *hfi;
-		struct hal_initial_quantization *quant = pdata;
-		pkt->rg_property_data[0] =
-			HFI_PROPERTY_PARAM_VENC_INITIAL_QP;
-		hfi = (struct hfi_initial_quantization *) &pkt->rg_property_data[1];
-		hfi->init_qp_enable = quant->initqp_enable;
-		hfi->qp_i = quant->qpi;
-		hfi->qp_p = quant->qpp;
-		hfi->qp_b = quant->qpb;
-		pkt->size += sizeof(u32) + sizeof(struct hfi_initial_quantization);
 		break;
 	}
 	case HAL_PARAM_VPE_COLOR_SPACE_CONVERSION:
@@ -1520,6 +1498,20 @@ int create_pkt_cmd_session_set_property(
 
 		dprintk(VIDC_DBG, "%s HAL_PARAM_VPE_COLOR_SPACE_CONVERSION\n",
 				__func__);
+		break;
+	}
+	case HAL_PARAM_VENC_ENABLE_INITIAL_QP:
+	{
+		struct hfi_initial_quantization *hfi;
+		struct hal_initial_quantization *quant = pdata;
+		pkt->rg_property_data[0] =
+			HFI_PROPERTY_PARAM_VENC_INITIAL_QP;
+		hfi = (struct hfi_initial_quantization *) &pkt->rg_property_data[1];
+		hfi->init_qp_enable = quant->initqp_enable;
+		hfi->qp_i = quant->qpi;
+		hfi->qp_p = quant->qpp;
+		hfi->qp_b = quant->qpb;
+		pkt->size += sizeof(u32) + sizeof(struct hfi_initial_quantization);
 		break;
 	}
 	/* FOLLOWING PROPERTIES ARE NOT IMPLEMENTED IN CORE YET */

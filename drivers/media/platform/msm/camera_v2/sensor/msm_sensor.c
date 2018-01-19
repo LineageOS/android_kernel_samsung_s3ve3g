@@ -35,7 +35,6 @@ uint16_t back_cam_fw_version = 0;
 #endif
 int led_torch_en;
 int led_flash_en;
-struct task_struct	*qdaemon_task;
 
 static int32_t msm_sensor_get_dt_data(struct device_node *of_node,
 	struct msm_sensor_ctrl_t *s_ctrl)
@@ -304,8 +303,6 @@ int msm_sensor_power_up(struct msm_sensor_ctrl_t *s_ctrl,
 		return -EINVAL;
 	}
 
-	qdaemon_task = current;
-
 	pr_warn("[%s:%d] %s", __func__, __LINE__,
 		sensor_name);
 	rc = msm_camera_power_up(power_info, s_ctrl->sensor_device_type,
@@ -357,8 +354,9 @@ int msm_sensor_match_id(struct msm_camera_i2c_client *sensor_i2c_client,
 
 	pr_info("func %s line %d chipid = 0x%X\n",
 		__func__, __LINE__, chipid);
-#if !defined(CONFIG_MACH_VASTALTE_CHN_CMCC_DUOS)
+
 	if (chipid != slave_info->sensor_id) {
+	 
 	    sensor_i2c_client->cci_client->sid = 0x6E >> 1;
 	    slave_info->sensor_id = 0x5B02;
 		chipid = 0;
@@ -407,8 +405,8 @@ int msm_sensor_match_id(struct msm_camera_i2c_client *sensor_i2c_client,
 		slave_info->sensor_id);
 			}
 		}
+		
 	}
-#endif
     pr_info("rc == %d \n", rc);
 	pr_info("%s: read id: %x expected id %x:\n", __func__, chipid,
 		slave_info->sensor_id);
@@ -833,10 +831,6 @@ int msm_sensor_config(struct msm_sensor_ctrl_t *s_ctrl, void __user *argp)
 			sizeof(gpio_config))) {
 			pr_err("%s:%d failed\n", __func__, __LINE__);
 			rc = -EFAULT;
-			break;
-		}
-		if(gpio_config.gpio_name < SENSOR_GPIO_RESET || gpio_config.gpio_name >= SENSOR_GPIO_MAX) {
-			rc = -EINVAL;
 			break;
 		}
 		pr_info("%s: setting gpio: %d to %d\n", __func__,
