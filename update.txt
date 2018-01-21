@@ -1,0 +1,597 @@
+Auto-merging virt/kvm/iommu.c
+Auto-merging tools/perf/util/parse-events.y
+Auto-merging tools/perf/util/parse-events.c
+Auto-merging tools/perf/Makefile
+Auto-merging sound/usb/stream.c
+Auto-merging sound/usb/quirks.c
+Auto-merging sound/usb/midi.c
+Auto-merging sound/usb/card.c
+Auto-merging sound/soc/soc-dapm.c
+Auto-merging sound/soc/soc-core.c
+CONFLICT (content): Merge conflict in sound/soc/soc-core.c
+Auto-merging sound/soc/codecs/wm_hubs.c
+Auto-merging sound/soc/Makefile
+Auto-merging sound/core/pcm_native.c
+Auto-merging sound/core/pcm_lib.c
+Auto-merging sound/core/pcm.c
+Auto-merging sound/core/init.c
+Auto-merging sound/core/control.c
+CONFLICT (content): Merge conflict in sound/core/control.c
+Auto-merging sound/core/compress_offload.c
+Auto-merging security/smack/smack_lsm.c
+Auto-merging security/selinux/ss/policydb.c
+Auto-merging security/selinux/selinuxfs.c
+Auto-merging security/selinux/nlmsgtab.c
+CONFLICT (content): Merge conflict in security/selinux/nlmsgtab.c
+Auto-merging security/selinux/netnode.c
+Auto-merging security/selinux/hooks.c
+CONFLICT (content): Merge conflict in security/selinux/hooks.c
+Auto-merging security/keys/keyctl.c
+Auto-merging security/keys/gc.c
+CONFLICT (content): Merge conflict in security/keys/gc.c
+Auto-merging security/keys/encrypted-keys/encrypted.c
+Auto-merging scripts/mod/modpost.c
+Auto-merging scripts/mod/file2alias.c
+Auto-merging net/wireless/util.c
+Auto-merging net/wireless/sme.c
+Auto-merging net/wireless/reg.c
+CONFLICT (content): Merge conflict in net/wireless/reg.c
+Auto-merging net/wireless/nl80211.c
+CONFLICT (content): Merge conflict in net/wireless/nl80211.c
+Auto-merging net/wireless/core.h
+Auto-merging net/wireless/core.c
+Auto-merging net/unix/af_unix.c
+Auto-merging net/socket.c
+CONFLICT (content): Merge conflict in net/socket.c
+Auto-merging net/sctp/associola.c
+Auto-merging net/sched/act_mirred.c
+Auto-merging net/rxrpc/ar-recvmsg.c
+Auto-merging net/rfkill/core.c
+Auto-merging net/packet/af_packet.c
+Auto-merging net/netlink/af_netlink.c
+CONFLICT (content): Merge conflict in net/netlink/af_netlink.c
+Auto-merging net/netfilter/xt_socket.c
+CONFLICT (content): Merge conflict in net/netfilter/xt_socket.c
+Auto-merging net/netfilter/nf_conntrack_core.c
+Auto-merging net/mac80211/util.c
+Auto-merging net/mac80211/mlme.c
+Auto-merging net/mac80211/ieee80211_i.h
+Auto-merging net/mac80211/cfg.c
+Auto-merging net/l2tp/l2tp_ppp.c
+Auto-merging net/key/af_key.c
+Auto-merging net/iucv/af_iucv.c
+Auto-merging net/irda/af_irda.c
+Auto-merging net/ipv6/xfrm6_policy.c
+Auto-merging net/ipv6/udp.c
+CONFLICT (content): Merge conflict in net/ipv6/udp.c
+Auto-merging net/ipv6/tcp_ipv6.c
+CONFLICT (content): Merge conflict in net/ipv6/tcp_ipv6.c
+Auto-merging net/ipv6/route.c
+CONFLICT (content): Merge conflict in net/ipv6/route.c
+Auto-merging net/ipv6/raw.c
+Auto-merging net/ipv6/netfilter/ip6_tables.c
+Auto-merging net/ipv6/ndisc.c
+Auto-merging net/ipv6/ip6mr.c
+Auto-merging net/ipv6/ip6_output.c
+Auto-merging net/ipv6/icmp.c
+Auto-merging net/ipv6/datagram.c
+Auto-merging net/ipv6/af_inet6.c
+Auto-merging net/ipv6/addrconf.c
+Auto-merging net/ipv6/Makefile
+Auto-merging net/ipv4/udp.c
+CONFLICT (content): Merge conflict in net/ipv4/udp.c
+Auto-merging net/ipv4/tcp_ipv4.c
+Auto-merging net/ipv4/tcp_input.c
+Auto-merging net/ipv4/tcp_cubic.c
+Auto-merging net/ipv4/tcp.c
+Auto-merging net/ipv4/sysctl_net_ipv4.c
+Auto-merging net/ipv4/syncookies.c
+CONFLICT (content): Merge conflict in net/ipv4/syncookies.c
+Auto-merging net/ipv4/route.c
+Auto-merging net/ipv4/raw.c
+Auto-merging net/ipv4/ping.c
+CONFLICT (content): Merge conflict in net/ipv4/ping.c
+Auto-merging net/ipv4/netfilter/ip_tables.c
+Auto-merging net/ipv4/netfilter/arp_tables.c
+Auto-merging net/ipv4/ipmr.c
+Auto-merging net/ipv4/ip_output.c
+Auto-merging net/ipv4/inet_connection_sock.c
+Auto-merging net/ipv4/igmp.c
+Auto-merging net/ipv4/fib_semantics.c
+Auto-merging net/ipv4/af_inet.c
+Auto-merging net/core/sysctl_net_core.c
+Auto-merging net/core/sock.c
+Auto-merging net/core/skbuff.c
+Auto-merging net/core/rtnetlink.c
+Auto-merging net/core/net_namespace.c
+Auto-merging net/core/neighbour.c
+Auto-merging net/core/flow_dissector.c
+Auto-merging net/core/filter.c
+Auto-merging net/core/fib_rules.c
+Auto-merging net/core/dev_addr_lists.c
+Auto-merging net/core/dev.c
+Auto-merging net/core/datagram.c
+Auto-merging net/caif/caif_socket.c
+Auto-merging net/bluetooth/smp.c
+CONFLICT (content): Merge conflict in net/bluetooth/smp.c
+Auto-merging net/bluetooth/sco.c
+Auto-merging net/bluetooth/rfcomm/tty.c
+Auto-merging net/bluetooth/rfcomm/sock.c
+CONFLICT (content): Merge conflict in net/bluetooth/rfcomm/sock.c
+Auto-merging net/bluetooth/mgmt.c
+CONFLICT (content): Merge conflict in net/bluetooth/mgmt.c
+Auto-merging net/bluetooth/l2cap_sock.c
+Auto-merging net/bluetooth/l2cap_core.c
+CONFLICT (content): Merge conflict in net/bluetooth/l2cap_core.c
+Auto-merging net/bluetooth/hidp/core.c
+Auto-merging net/bluetooth/hci_sock.c
+Auto-merging net/bluetooth/hci_event.c
+CONFLICT (content): Merge conflict in net/bluetooth/hci_event.c
+Auto-merging net/bluetooth/hci_core.c
+CONFLICT (content): Merge conflict in net/bluetooth/hci_core.c
+Auto-merging net/bluetooth/hci_conn.c
+CONFLICT (content): Merge conflict in net/bluetooth/hci_conn.c
+Auto-merging net/bluetooth/af_bluetooth.c
+Auto-merging net/ax25/af_ax25.c
+Auto-merging mm/vmstat.c
+Auto-merging mm/vmscan.c
+CONFLICT (content): Merge conflict in mm/vmscan.c
+Auto-merging mm/vmalloc.c
+Auto-merging mm/swapfile.c
+Auto-merging mm/swap_state.c
+Auto-merging mm/sparse.c
+Auto-merging mm/slub.c
+Auto-merging mm/shmem.c
+Auto-merging mm/rmap.c
+Auto-merging mm/page_alloc.c
+CONFLICT (content): Merge conflict in mm/page_alloc.c
+Auto-merging mm/page-writeback.c
+CONFLICT (content): Merge conflict in mm/page-writeback.c
+Auto-merging mm/nommu.c
+Auto-merging mm/mmap.c
+Auto-merging mm/migrate.c
+Auto-merging mm/mempolicy.c
+Auto-merging mm/memory_hotplug.c
+CONFLICT (content): Merge conflict in mm/memory_hotplug.c
+Auto-merging mm/memory.c
+CONFLICT (content): Merge conflict in mm/memory.c
+Auto-merging mm/memory-failure.c
+Auto-merging mm/memcontrol.c
+Auto-merging mm/memblock.c
+Auto-merging mm/ksm.c
+Auto-merging mm/internal.h
+CONFLICT (content): Merge conflict in mm/internal.h
+Auto-merging mm/filemap.c
+Auto-merging mm/bootmem.c
+Auto-merging mm/backing-dev.c
+Auto-merging lib/vsprintf.c
+Auto-merging lib/idr.c
+Auto-merging lib/genalloc.c
+Auto-merging lib/devres.c
+Auto-merging lib/bitmap.c
+Auto-merging lib/Makefile
+Auto-merging kernel/workqueue.c
+CONFLICT (content): Merge conflict in kernel/workqueue.c
+Auto-merging kernel/watchdog.c
+Auto-merging kernel/trace/trace_syscalls.c
+Auto-merging kernel/trace/trace_events_filter.c
+Auto-merging kernel/trace/trace.c
+Auto-merging kernel/trace/blktrace.c
+Auto-merging kernel/trace/Kconfig
+Auto-merging kernel/timer.c
+Auto-merging kernel/time/timekeeping.c
+Auto-merging kernel/time/tick-sched.c
+Auto-merging kernel/time/tick-broadcast.c
+Auto-merging kernel/time/alarmtimer.c
+Auto-merging kernel/sysctl_binary.c
+Auto-merging kernel/sysctl.c
+Auto-merging kernel/sys.c
+Auto-merging kernel/softirq.c
+Auto-merging kernel/smp.c
+Auto-merging kernel/signal.c
+CONFLICT (content): Merge conflict in kernel/signal.c
+Auto-merging kernel/sched/sched.h
+Auto-merging kernel/sched/rt.c
+Auto-merging kernel/sched/fair.c
+Auto-merging kernel/sched/debug.c
+Auto-merging kernel/sched/core.c
+CONFLICT (content): Merge conflict in kernel/sched/core.c
+Auto-merging kernel/resource.c
+Auto-merging kernel/rcutree.c
+Auto-merging kernel/ptrace.c
+Auto-merging kernel/printk.c
+Auto-merging kernel/power/suspend.c
+CONFLICT (content): Merge conflict in kernel/power/suspend.c
+Auto-merging kernel/power/process.c
+Auto-merging kernel/panic.c
+Auto-merging kernel/module.c
+Auto-merging kernel/kthread.c
+CONFLICT (content): Merge conflict in kernel/kthread.c
+Auto-merging kernel/irq/pm.c
+Auto-merging kernel/irq/manage.c
+Auto-merging kernel/irq/irqdesc.c
+Auto-merging kernel/irq/handle.c
+Auto-merging kernel/hrtimer.c
+CONFLICT (content): Merge conflict in kernel/hrtimer.c
+Auto-merging kernel/futex.c
+CONFLICT (content): Merge conflict in kernel/futex.c
+Auto-merging kernel/fork.c
+Auto-merging kernel/exit.c
+Auto-merging kernel/events/core.c
+CONFLICT (content): Merge conflict in kernel/events/core.c
+Auto-merging kernel/debug/kdb/kdb_io.c
+Auto-merging kernel/cpu.c
+Auto-merging kernel/cgroup.c
+CONFLICT (content): Merge conflict in kernel/cgroup.c
+Auto-merging kernel/auditsc.c
+CONFLICT (content): Merge conflict in kernel/auditsc.c
+Auto-merging kernel/audit_tree.c
+Auto-merging kernel/audit.c
+Auto-merging ipc/shm.c
+Auto-merging ipc/msgutil.c
+Auto-merging ipc/msg.c
+Auto-merging init/main.c
+Auto-merging init/Kconfig
+Auto-merging include/trace/ftrace.h
+Auto-merging include/trace/events/kmem.h
+Auto-merging include/target/target_core_base.h
+Auto-merging include/sound/tlv.h
+Auto-merging include/sound/core.h
+CONFLICT (content): Merge conflict in include/sound/core.h
+Auto-merging include/scsi/scsi_device.h
+Auto-merging include/net/tcp.h
+Auto-merging include/net/sock.h
+Auto-merging include/net/scm.h
+Auto-merging include/net/ipv6.h
+Auto-merging include/net/ip.h
+Auto-merging include/net/inet_sock.h
+Auto-merging include/net/cfg80211.h
+Auto-merging include/net/bluetooth/smp.h
+Auto-merging include/net/bluetooth/mgmt.h
+CONFLICT (content): Merge conflict in include/net/bluetooth/mgmt.h
+Auto-merging include/net/bluetooth/hci_core.h
+CONFLICT (content): Merge conflict in include/net/bluetooth/hci_core.h
+Auto-merging include/net/addrconf.h
+Auto-merging include/media/v4l2-ctrls.h
+Auto-merging include/linux/wait.h
+Auto-merging include/linux/virtio.h
+CONFLICT (content): Merge conflict in include/linux/virtio.h
+Auto-merging include/linux/usb/quirks.h
+CONFLICT (content): Merge conflict in include/linux/usb/quirks.h
+Auto-merging include/linux/usb/hcd.h
+Auto-merging include/linux/usb/ch9.h
+Auto-merging include/linux/usb/audio.h
+Auto-merging include/linux/usb.h
+Auto-merging include/linux/thermal.h
+Auto-merging include/linux/sysfs.h
+Auto-merging include/linux/skbuff.h
+Auto-merging include/linux/serial_core.h
+Auto-merging include/linux/sched.h
+CONFLICT (content): Merge conflict in include/linux/sched.h
+Auto-merging include/linux/rmap.h
+Auto-merging include/linux/printk.h
+Auto-merging include/linux/page-flags.h
+Auto-merging include/linux/of.h
+Auto-merging include/linux/mmzone.h
+Auto-merging include/linux/mm_types.h
+Auto-merging include/linux/mm.h
+Auto-merging include/linux/memblock.h
+Auto-merging include/linux/kref.h
+CONFLICT (content): Merge conflict in include/linux/kref.h
+Auto-merging include/linux/kernel.h
+Auto-merging include/linux/jbd2.h
+CONFLICT (content): Merge conflict in include/linux/jbd2.h
+Auto-merging include/linux/irqdesc.h
+Auto-merging include/linux/ipv6.h
+Auto-merging include/linux/ipc_namespace.h
+Auto-merging include/linux/if_pppox.h
+Auto-merging include/linux/highmem.h
+CONFLICT (content): Merge conflict in include/linux/highmem.h
+Auto-merging include/linux/hid.h
+Auto-merging include/linux/fs.h
+Auto-merging include/linux/freezer.h
+Auto-merging include/linux/device.h
+Auto-merging include/linux/cpu.h
+Auto-merging include/linux/cgroup.h
+Auto-merging include/linux/blkdev.h
+Auto-merging include/linux/blk_types.h
+Auto-merging include/linux/Kbuild
+Auto-merging include/asm-generic/pgtable.h
+Auto-merging fs/ubifs/dir.c
+CONFLICT (content): Merge conflict in fs/ubifs/dir.c
+Auto-merging fs/super.c
+Auto-merging fs/splice.c
+Auto-merging fs/proc/task_mmu.c
+Auto-merging fs/proc/stat.c
+Auto-merging fs/proc/proc_sysctl.c
+Auto-merging fs/proc/inode.c
+Auto-merging fs/proc/base.c
+Auto-merging fs/proc/array.c
+Auto-merging fs/pnode.c
+Auto-merging fs/pipe.c
+Auto-merging fs/open.c
+Auto-merging fs/namespace.c
+CONFLICT (content): Merge conflict in fs/namespace.c
+Auto-merging fs/namei.c
+Auto-merging fs/jbd2/transaction.c
+Auto-merging fs/jbd2/journal.c
+Auto-merging fs/jbd2/commit.c
+CONFLICT (content): Merge conflict in fs/jbd2/commit.c
+Auto-merging fs/jbd2/checkpoint.c
+Auto-merging fs/ioprio.c
+Auto-merging fs/internal.h
+Auto-merging fs/inode.c
+Auto-merging fs/fuse/file.c
+Auto-merging fs/fuse/dev.c
+Auto-merging fs/fs-writeback.c
+Auto-merging fs/file_table.c
+CONFLICT (content): Merge conflict in fs/file_table.c
+Auto-merging fs/file.c
+Auto-merging fs/fat/inode.c
+Auto-merging fs/ext4/xattr.c
+CONFLICT (content): Merge conflict in fs/ext4/xattr.c
+Auto-merging fs/ext4/super.c
+Auto-merging fs/ext4/namei.c
+CONFLICT (content): Merge conflict in fs/ext4/namei.c
+Auto-merging fs/ext4/mballoc.c
+Auto-merging fs/ext4/ioctl.c
+Auto-merging fs/ext4/inode.c
+Auto-merging fs/ext4/ialloc.c
+CONFLICT (content): Merge conflict in fs/ext4/ialloc.c
+Auto-merging fs/ext4/file.c
+Auto-merging fs/ext4/extents.c
+Auto-merging fs/ext4/ext4.h
+Auto-merging fs/ext4/balloc.c
+CONFLICT (content): Merge conflict in fs/ext4/balloc.c
+Auto-merging fs/exec.c
+Auto-merging fs/ecryptfs/mmap.c
+CONFLICT (content): Merge conflict in fs/ecryptfs/mmap.c
+Auto-merging fs/ecryptfs/main.c
+CONFLICT (content): Merge conflict in fs/ecryptfs/main.c
+Auto-merging fs/ecryptfs/keystore.c
+CONFLICT (content): Merge conflict in fs/ecryptfs/keystore.c
+Auto-merging fs/ecryptfs/inode.c
+CONFLICT (content): Merge conflict in fs/ecryptfs/inode.c
+Auto-merging fs/ecryptfs/file.c
+CONFLICT (content): Merge conflict in fs/ecryptfs/file.c
+Auto-merging fs/dcache.c
+CONFLICT (content): Merge conflict in fs/dcache.c
+Auto-merging fs/compat_ioctl.c
+Auto-merging fs/buffer.c
+CONFLICT (content): Merge conflict in fs/buffer.c
+Auto-merging drivers/w1/w1.c
+Auto-merging drivers/virtio/virtio_ring.c
+CONFLICT (content): Merge conflict in drivers/virtio/virtio_ring.c
+Auto-merging drivers/video/fbmem.c
+CONFLICT (content): Merge conflict in drivers/video/fbmem.c
+Auto-merging drivers/vhost/vhost.c
+Auto-merging drivers/usb/storage/usb.c
+Auto-merging drivers/usb/storage/transport.c
+Auto-merging drivers/usb/storage/Kconfig
+Auto-merging drivers/usb/serial/usb_wwan.c
+CONFLICT (content): Merge conflict in drivers/usb/serial/usb_wwan.c
+Auto-merging drivers/usb/serial/qcserial.c
+CONFLICT (content): Merge conflict in drivers/usb/serial/qcserial.c
+Auto-merging drivers/usb/host/xhci.h
+CONFLICT (content): Merge conflict in drivers/usb/host/xhci.h
+Auto-merging drivers/usb/host/xhci.c
+CONFLICT (content): Merge conflict in drivers/usb/host/xhci.c
+Auto-merging drivers/usb/host/xhci-ring.c
+Auto-merging drivers/usb/host/xhci-plat.c
+CONFLICT (content): Merge conflict in drivers/usb/host/xhci-plat.c
+Auto-merging drivers/usb/host/xhci-hub.c
+CONFLICT (content): Merge conflict in drivers/usb/host/xhci-hub.c
+Auto-merging drivers/usb/host/ehci-q.c
+Auto-merging drivers/usb/host/ehci-hub.c
+Auto-merging drivers/usb/host/ehci-hcd.c
+Auto-merging drivers/usb/gadget/udc-core.c
+Auto-merging drivers/usb/gadget/u_ether.c
+Auto-merging drivers/usb/gadget/inode.c
+Auto-merging drivers/usb/gadget/f_rndis.c
+Auto-merging drivers/usb/gadget/f_ncm.c
+Auto-merging drivers/usb/gadget/f_midi.c
+Auto-merging drivers/usb/gadget/f_mass_storage.c
+CONFLICT (content): Merge conflict in drivers/usb/gadget/f_mass_storage.c
+Auto-merging drivers/usb/gadget/composite.c
+Auto-merging drivers/usb/dwc3/gadget.h
+Auto-merging drivers/usb/dwc3/gadget.c
+CONFLICT (content): Merge conflict in drivers/usb/dwc3/gadget.c
+Auto-merging drivers/usb/dwc3/ep0.c
+CONFLICT (content): Merge conflict in drivers/usb/dwc3/ep0.c
+Auto-merging drivers/usb/dwc3/core.h
+Auto-merging drivers/usb/dwc3/core.c
+CONFLICT (content): Merge conflict in drivers/usb/dwc3/core.c
+Auto-merging drivers/usb/core/usb.h
+Auto-merging drivers/usb/core/usb.c
+Auto-merging drivers/usb/core/quirks.c
+Auto-merging drivers/usb/core/message.c
+CONFLICT (content): Merge conflict in drivers/usb/core/message.c
+Auto-merging drivers/usb/core/hub.c
+CONFLICT (content): Merge conflict in drivers/usb/core/hub.c
+Auto-merging drivers/usb/core/hcd.c
+Auto-merging drivers/usb/core/driver.c
+CONFLICT (content): Merge conflict in drivers/usb/core/driver.c
+Auto-merging drivers/usb/core/devio.c
+Auto-merging drivers/usb/class/cdc-acm.c
+Auto-merging drivers/tty/tty_io.c
+Auto-merging drivers/tty/tty_buffer.c
+Auto-merging drivers/tty/serial/serial_core.c
+Auto-merging drivers/tty/serial/Kconfig
+Auto-merging drivers/tty/n_tty.c
+Auto-merging drivers/thermal/thermal_sys.c
+Auto-merging drivers/target/target_core_transport.c
+Auto-merging drivers/target/iscsi/iscsi_target.c
+Auto-merging drivers/staging/zsmalloc/zsmalloc-main.c
+CONFLICT (content): Merge conflict in drivers/staging/zsmalloc/zsmalloc-main.c
+CONFLICT (modify/delete): drivers/staging/zram/zram_sysfs.c deleted in HEAD and modified in v3.4.113. Version v3.4.113 of drivers/staging/zram/zram_sysfs.c left in tree.
+Auto-merging drivers/staging/zram/zram_drv.c
+CONFLICT (content): Merge conflict in drivers/staging/zram/zram_drv.c
+Auto-merging drivers/staging/zcache/zcache-main.c
+Auto-merging drivers/staging/android/binder.c
+Auto-merging drivers/spi/spidev.c
+Auto-merging drivers/scsi/sg.c
+Auto-merging drivers/scsi/sd.h
+Auto-merging drivers/scsi/sd.c
+CONFLICT (modify/delete): drivers/scsi/scsi_wait_scan.c deleted in HEAD and modified in v3.4.113. Version v3.4.113 of drivers/scsi/scsi_wait_scan.c left in tree.
+Auto-merging drivers/scsi/scsi_lib.c
+Auto-merging drivers/remoteproc/remoteproc_core.c
+Auto-merging drivers/regulator/core.c
+Auto-merging drivers/pinctrl/pinctrl-tegra.c
+Auto-merging drivers/pci/pci-driver.c
+Auto-merging drivers/of/base.c
+Auto-merging drivers/of/address.c
+Auto-merging drivers/net/virtio_net.c
+Auto-merging drivers/net/usb/usbnet.c
+Auto-merging drivers/net/usb/smsc95xx.c
+Auto-merging drivers/net/usb/asix.c
+CONFLICT (content): Merge conflict in drivers/net/usb/asix.c
+Auto-merging drivers/net/tun.c
+CONFLICT (content): Merge conflict in drivers/net/tun.c
+Auto-merging drivers/net/ppp/ppp_generic.c
+Auto-merging drivers/net/ethernet/smsc/smc91x.h
+CONFLICT (content): Merge conflict in drivers/net/ethernet/smsc/smc91x.h
+Auto-merging drivers/net/ethernet/micrel/ks8851.c
+Auto-merging drivers/mtd/mtdpart.c
+Auto-merging drivers/mtd/mtdchar.c
+CONFLICT (content): Merge conflict in drivers/mtd/mtdchar.c
+Auto-merging drivers/mtd/mtd_blkdevs.c
+Auto-merging drivers/mtd/Kconfig
+Auto-merging drivers/mmc/host/sdhci.c
+Auto-merging drivers/mmc/host/sdhci-s3c.c
+Auto-merging drivers/mmc/host/Kconfig
+Auto-merging drivers/mmc/core/mmc.c
+Auto-merging drivers/mmc/core/core.c
+CONFLICT (content): Merge conflict in drivers/mmc/core/core.c
+Auto-merging drivers/mmc/card/block.c
+CONFLICT (content): Merge conflict in drivers/mmc/card/block.c
+Auto-merging drivers/media/dvb/dvb-core/dmxdev.c
+CONFLICT (content): Merge conflict in drivers/media/dvb/dvb-core/dmxdev.c
+Auto-merging drivers/md/md.c
+Auto-merging drivers/md/dm-crypt.c
+CONFLICT (content): Merge conflict in drivers/md/dm-crypt.c
+Auto-merging drivers/iommu/intel-iommu.c
+Auto-merging drivers/iommu/amd_iommu.c
+Auto-merging drivers/input/keyboard/Kconfig
+Auto-merging drivers/input/input.c
+Auto-merging drivers/input/Kconfig
+Auto-merging drivers/infiniband/ulp/srpt/ib_srpt.c
+Auto-merging drivers/i2c/busses/Makefile
+Auto-merging drivers/i2c/busses/Kconfig
+Auto-merging drivers/hid/hid-picolcd.c
+CONFLICT (content): Merge conflict in drivers/hid/hid-picolcd.c
+Auto-merging drivers/hid/hid-multitouch.c
+Auto-merging drivers/hid/hid-logitech-dj.c
+CONFLICT (content): Merge conflict in drivers/hid/hid-logitech-dj.c
+Auto-merging drivers/hid/hid-input.c
+Auto-merging drivers/hid/hid-ids.h
+Auto-merging drivers/hid/hid-core.c
+CONFLICT (content): Merge conflict in drivers/hid/hid-core.c
+Auto-merging drivers/hid/hid-apple.c
+Auto-merging drivers/gpu/drm/radeon/radeon_irq_kms.c
+CONFLICT (content): Merge conflict in drivers/gpu/drm/radeon/radeon_irq_kms.c
+Auto-merging drivers/gpu/drm/radeon/radeon_connectors.c
+CONFLICT (content): Merge conflict in drivers/gpu/drm/radeon/radeon_connectors.c
+Auto-merging drivers/gpu/drm/radeon/radeon_combios.c
+Auto-merging drivers/gpu/drm/nouveau/nouveau_gem.c
+Auto-merging drivers/gpu/drm/i915/intel_display.c
+CONFLICT (content): Merge conflict in drivers/gpu/drm/i915/intel_display.c
+Auto-merging drivers/gpu/drm/drm_crtc.c
+Auto-merging drivers/gpio/gpiolib.c
+CONFLICT (content): Merge conflict in drivers/gpio/gpiolib.c
+Auto-merging drivers/gpio/gpio-msm-v2.c
+CONFLICT (content): Merge conflict in drivers/gpio/gpio-msm-v2.c
+Auto-merging drivers/cpufreq/cpufreq.c
+CONFLICT (content): Merge conflict in drivers/cpufreq/cpufreq.c
+Auto-merging drivers/char/random.c
+Auto-merging drivers/bluetooth/hci_uart.h
+Auto-merging drivers/bluetooth/hci_ldisc.c
+CONFLICT (content): Merge conflict in drivers/bluetooth/hci_ldisc.c
+Auto-merging drivers/bluetooth/btusb.c
+CONFLICT (content): Merge conflict in drivers/bluetooth/btusb.c
+Auto-merging drivers/bluetooth/ath3k.c
+CONFLICT (content): Merge conflict in drivers/bluetooth/ath3k.c
+Auto-merging drivers/base/power/main.c
+CONFLICT (content): Merge conflict in drivers/base/power/main.c
+Auto-merging drivers/base/firmware_class.c
+CONFLICT (content): Merge conflict in drivers/base/firmware_class.c
+Auto-merging drivers/base/dd.c
+Auto-merging drivers/base/bus.c
+Auto-merging drivers/ata/Kconfig
+Auto-merging crypto/testmgr.h
+Auto-merging crypto/shash.c
+Auto-merging crypto/blkcipher.c
+Auto-merging crypto/api.c
+Auto-merging crypto/ansi_cprng.c
+Auto-merging crypto/algapi.c
+CONFLICT (content): Merge conflict in crypto/algapi.c
+Auto-merging crypto/ahash.c
+Auto-merging crypto/ablkcipher.c
+Auto-merging block/partition-generic.c
+Auto-merging block/genhd.c
+Auto-merging block/elevator.c
+Auto-merging block/blk-settings.c
+Auto-merging block/blk-lib.c
+Auto-merging block/blk-core.c
+Auto-merging arch/x86/kernel/setup.c
+Auto-merging arch/x86/Kconfig
+Auto-merging arch/arm/vfp/vfpmodule.c
+CONFLICT (content): Merge conflict in arch/arm/vfp/vfpmodule.c
+Auto-merging arch/arm/vfp/vfphw.S
+Auto-merging arch/arm/vfp/entry.S
+CONFLICT (content): Merge conflict in arch/arm/vfp/entry.S
+Auto-merging arch/arm/mm/tlb-v7.S
+CONFLICT (content): Merge conflict in arch/arm/mm/tlb-v7.S
+Auto-merging arch/arm/mm/proc-xscale.S
+Auto-merging arch/arm/mm/proc-xsc3.S
+Auto-merging arch/arm/mm/proc-v7.S
+CONFLICT (content): Merge conflict in arch/arm/mm/proc-v7.S
+Auto-merging arch/arm/mm/proc-v6.S
+Auto-merging arch/arm/mm/proc-arm926.S
+Auto-merging arch/arm/mm/proc-arm920.S
+Auto-merging arch/arm/mm/mmu.c
+CONFLICT (content): Merge conflict in arch/arm/mm/mmu.c
+Auto-merging arch/arm/mm/init.c
+Auto-merging arch/arm/mm/idmap.c
+Auto-merging arch/arm/mm/flush.c
+Auto-merging arch/arm/mm/dma-mapping.c
+CONFLICT (content): Merge conflict in arch/arm/mm/dma-mapping.c
+Auto-merging arch/arm/mm/cache-v7.S
+Auto-merging arch/arm/mm/alignment.c
+Auto-merging arch/arm/kernel/traps.c
+CONFLICT (content): Merge conflict in arch/arm/kernel/traps.c
+Auto-merging arch/arm/kernel/swp_emulate.c
+Auto-merging arch/arm/kernel/smp.c
+Auto-merging arch/arm/kernel/signal.c
+CONFLICT (content): Merge conflict in arch/arm/kernel/signal.c
+Auto-merging arch/arm/kernel/process.c
+Auto-merging arch/arm/kernel/perf_event_v7.c
+Auto-merging arch/arm/kernel/perf_event.c
+CONFLICT (content): Merge conflict in arch/arm/kernel/perf_event.c
+Auto-merging arch/arm/kernel/machine_kexec.c
+Auto-merging arch/arm/kernel/hw_breakpoint.c
+Auto-merging arch/arm/kernel/head.S
+Auto-merging arch/arm/kernel/entry-header.S
+Auto-merging arch/arm/kernel/entry-armv.S
+Auto-merging arch/arm/include/asm/uaccess.h
+CONFLICT (content): Merge conflict in arch/arm/include/asm/uaccess.h
+Auto-merging arch/arm/include/asm/processor.h
+Auto-merging arch/arm/include/asm/pgtable.h
+CONFLICT (content): Merge conflict in arch/arm/include/asm/pgtable.h
+Auto-merging arch/arm/include/asm/outercache.h
+Auto-merging arch/arm/include/asm/mutex.h
+CONFLICT (content): Merge conflict in arch/arm/include/asm/mutex.h
+Auto-merging arch/arm/include/asm/cacheflush.h
+Removing arch/arm/include/asm/a.out.h
+Removing arch/arm/include/asm/a.out-core.h
+Auto-merging arch/arm/boot/compressed/head.S
+Auto-merging arch/arm/boot/compressed/Makefile
+Auto-merging arch/arm/Makefile
+CONFLICT (content): Merge conflict in arch/arm/Makefile
+Auto-merging arch/arm/Kconfig
+CONFLICT (content): Merge conflict in arch/arm/Kconfig
+Auto-merging Makefile
+Auto-merging MAINTAINERS
+Auto-merging Documentation/sysctl/kernel.txt
+Auto-merging Documentation/pinctrl.txt
+Auto-merging Documentation/networking/ip-sysctl.txt
+Auto-merging Documentation/kernel-parameters.txt

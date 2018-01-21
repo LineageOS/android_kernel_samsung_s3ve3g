@@ -589,7 +589,6 @@ void flush_kthread_work(struct kthread_work *work)
 	};
 	struct kthread_worker *worker;
 	bool noop = false;
-
 retry:
 	worker = work->worker;
 	if (!worker)

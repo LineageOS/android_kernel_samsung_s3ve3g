@@ -416,9 +416,6 @@ out:
 	return err;
 }
 
-/*
- *	Handle IPV6_RECVPATHMTU
- */
 int ipv6_recv_rxpmtu(struct sock *sk, struct msghdr *msg, int len)
 {
 	struct ipv6_pinfo *np = inet6_sk(sk);
@@ -464,7 +461,6 @@ out_free_skb:
 out:
 	return err;
 }
-
 
 int datagram_recv_ctl(struct sock *sk, struct msghdr *msg, struct sk_buff *skb)
 {

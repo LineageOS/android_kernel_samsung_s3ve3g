@@ -22,11 +22,7 @@
 
 #define S5K4H5YB_DEBUG
 #undef CDBG
-#ifdef S5K4H5YB_DEBUG
 #define CDBG(fmt, args...) printk("s5k4h5yb: %s:%d : "fmt,   __FUNCTION__, __LINE__, ##args)
-#else
-#define CDBG(fmt, args...) pr_debug(fmt, ##args)
-#endif
 
 DEFINE_MUTEX(s5k4h5yb_mut);
 static struct msm_sensor_ctrl_t s5k4h5yb_s_ctrl;
