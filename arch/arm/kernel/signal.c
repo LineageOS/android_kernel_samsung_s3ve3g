@@ -445,7 +445,7 @@ setup_return(struct pt_regs *regs, struct k_sigaction *ka,
 		 * Clear the If-Then Thumb-2 execution state
 		 * ARM spec requires this to be all 000s in ARM mode
 		 * Snapdragon S4/Krait misbehaves on a Thumb=>ARM
-		 * signal transition without this.
+		 * signal transition without this
 		 */
 		cpsr &= ~PSR_IT_MASK;
 #endif

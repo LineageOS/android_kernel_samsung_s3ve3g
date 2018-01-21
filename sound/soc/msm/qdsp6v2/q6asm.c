@@ -3003,9 +3003,6 @@ int q6asm_memory_map(struct audio_client *ac, uint32_t buf_add, int dir,
 	q6asm_add_mmaphdr(ac, &mmap_regions->hdr, cmd_size,
 			TRUE, ((ac->session << 8) | dir));
 	//WTF was this????
-	//<<<<<<< HEAD
-	//=======
-	//>>>>>>> f51548d... ASoC: msm: qdsp6v2: Add a new waitqueue state for mem map/unmap
 	atomic_set(&ac->mem_state, 1);
 	mmap_regions->hdr.opcode = ASM_CMD_SHARED_MEM_MAP_REGIONS;
 	mmap_regions->mem_pool_id = ADSP_MEMORY_MAP_SHMEM8_4K_POOL;

@@ -1,0 +1,12 @@
+./arch/arm/Makefile:316:<<<<<<< HEAD
+./arch/arm/vfp/vfpmodule.c:800:<<<<<<< HEAD
+./arch/arm/vfp/entry.S:10:<<<<<<< HEAD
+./arch/arm/kernel/traps.c:439:<<<<<<< HEAD
+./arch/arm/kernel/signal.c:443:<<<<<<< HEAD
+./arch/arm/kernel/perf_event.c:122:<<<<<<< HEAD
+./arch/arm/kernel/perf_event.c:356:<<<<<<< HEAD
+./arch/arm/Kconfig:1481:<<<<<<< HEAD
+./arch/arm/include/asm/uaccess.h:161:<<<<<<< HEAD
+./arch/arm/include/asm/pgtable.h:254:<<<<<<< HEAD
+./arch/arm/include/asm/mutex.h:15:<<<<<<< HEAD
+./arch/arm/mm/proc-v7.S:283:<<<<<<< HEAD
